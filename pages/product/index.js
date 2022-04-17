@@ -1,19 +1,27 @@
 import Link from 'next/link';
 
 export default function Product(){
+  
+  let test = [
+    `/product/${Math.floor(Math.random()*1000)}`,
+    `/product/${Math.floor(Math.random()*1000)}`,
+    `/product/${Math.floor(Math.random()*1000)}`
+  ];
+  
+  const components = [];
+  for(let i = 0; i < test.length; i++){
+    components.push(
+    <Link href={test[i]}>
+      <li>Loop ke-{i}</li>
+    </Link>
+    );
+  }
+  
   return (
   
   <>
     <ul>
-      <Link href="/product/1">
-       <a><h4>Product 1</h4></a>
-      </Link>
-      <Link href="/product/2">
-        <a><h4>Product 2</h4></a>
-      </Link>
-      <Link href="/product/3">
-        <a><h4>Product 3</h4></a>
-      </Link>
+      {components}
     </ul>
   </>
   

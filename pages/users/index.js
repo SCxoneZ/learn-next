@@ -6,7 +6,7 @@ export default function Users({ users }){
     {users.map(user => {
       return (
       
-      <ul>
+      <ul key ={user.id}>
         <li>{user.name}</li>
         <li>{user.email}</li>
         <li>{user.phone}</li>

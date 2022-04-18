@@ -1,4 +1,9 @@
 import Link from 'next/link';
+import styled from 'styled-components';
+
+const MyList = styled.li({
+  color: 'red'
+});
 
 export default function Product(){
   
@@ -11,8 +16,8 @@ export default function Product(){
   const components = [];
   for(let i = 0; i < test.length; i++){
     components.push(
-    <Link href={test[i]}>
-      <li>Loop ke-{i}</li>
+    <Link key={i} href={test[i]}>
+      <MyList>Loop ke-{i}</MyList>
     </Link>
     );
   }
